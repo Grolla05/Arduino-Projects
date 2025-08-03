@@ -22,44 +22,42 @@ void setup() {
 
 void loop(){
   sensorValue = analogRead(sensor);                   // Lê o valor atual do fotoresistor (LDR)
-
-   if (sensorValue < 250) {
+  if (sensorValue < 250) {                            // Condição 1: Muito escuro (os 4 LEDs acendem)
     digitalWrite(led_Vermelho, HIGH);
     digitalWrite(led_Verde, HIGH);
     digitalWrite(led_Azul, HIGH);
     digitalWrite(led_Branco, HIGH);
   }
-  // Condição 2: Escuro (3 LEDs acendem)
-  else if (sensorValue < 500) {
+
+  else if (sensorValue < 500) {                       // Condição 2: Escuro (3 LEDs acendem)
     digitalWrite(led_Vermelho, HIGH);
     digitalWrite(led_Verde, HIGH);
     digitalWrite(led_Azul, HIGH);
-    digitalWrite(led_Branco, LOW); // Garante que o LED branco apague
-  }
-  // Condição 3: Meia-luz (2 LEDs acendem)
-  else if (sensorValue < 750) {
-    digitalWrite(led_Vermelho, HIGH);
-    digitalWrite(led_Verde, HIGH);
-    digitalWrite(led_Azul, LOW);   // Garante que os outros apaguem
     digitalWrite(led_Branco, LOW);
   }
-  // Condição 4: Pouca luz (apenas o LED vermelho acende)
-  else if (sensorValue < 900) {
+
+  else if (sensorValue < 750) {                       // Condição 3: Meia-luz (2 LEDs acendem)
     digitalWrite(led_Vermelho, HIGH);
-    digitalWrite(led_Verde, LOW);    // Garante que os outros apaguem
+    digitalWrite(led_Verde, HIGH);
     digitalWrite(led_Azul, LOW);
     digitalWrite(led_Branco, LOW);
   }
-  // Condição 5: Claro (todos os LEDs apagados)
-  else {
+
+  else if (sensorValue < 900) {                       // Condição 4: Pouca luz (apenas o LED vermelho acende)
+    digitalWrite(led_Vermelho, HIGH);
+    digitalWrite(led_Verde, LOW);
+    digitalWrite(led_Azul, LOW);
+    digitalWrite(led_Branco, LOW);
+  }
+
+  else {                                              // Condição 5: Claro (todos os LEDs apagados)
     digitalWrite(led_Vermelho, LOW);
     digitalWrite(led_Verde, LOW);
     digitalWrite(led_Azul, LOW);
     digitalWrite(led_Branco, LOW);
   }
   
-  // Imprime as leituras atuais no monitor serial da IDE do Arduino
-  Serial.print ("Leitura atual do sensor: ");
+  Serial.print ("Leitura atual do sensor: ");         // Imprime as leituras atuais no monitor serial da IDE do Arduino
   Serial.println(sensorValue);
   delay(130);
 }
