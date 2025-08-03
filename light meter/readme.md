@@ -1,4 +1,4 @@
-# Light Meter
+# Light Meter Project
 
 A light measurement project using an Arduino, an LDR sensor, and LEDs to indicate ambient light levels.
 
