@@ -1,50 +1,50 @@
 # Light Meter
 
-Um projeto de medidor de luminosidade utilizando Arduino, sensor LDR e LEDs para indicar o nível de luz ambiente.
+A light measurement project using an Arduino, an LDR sensor, and LEDs to indicate ambient light levels.
 
-## 📋 Descrição
+## 📋 Description
 
-Este projeto utiliza um sensor LDR (Light Dependent Resistor) para medir a intensidade da luz no ambiente. Conforme o valor lido pelo sensor, diferentes LEDs são acionados para indicar o nível de luminosidade detectado.
+This project uses a Light Dependent Resistor (LDR) to measure ambient light intensity. Based on the sensor readings, different LEDs light up to indicate the detected brightness level.
 
-## ⚙️ Componentes Utilizados
+## ⚙️ Components Used
 
-- 1x Arduino Uno (ou compatível)
-- 1x Sensor LDR
-- 4x LEDs (cores variadas)
-- 4x Resistores para LEDs (220Ω ou 330Ω)
-- 1x Resistor para LDR (10kΩ recomendado)
-- Jumpers e protoboard
+- 1x Arduino Uno (or compatible)
+- 1x LDR sensor
+- 4x LEDs (various colors)
+- 4x Resistors for LEDs (220Ω or 330Ω)
+- 1x Resistor for the LDR (10kΩ recommended)
+- Jumper wires and a breadboard
 
-## 🔌 Esquemático
+## 🔌 Schematic
 
-- O LDR é conectado em um divisor de tensão com o resistor de 10kΩ, ligado a uma entrada analógica do Arduino.
-- Cada LED é conectado a uma porta digital do Arduino, com resistor limitador.
+- The LDR is connected in a voltage divider with the 10kΩ resistor, which is then connected to one of the Arduino’s analog inputs.
+- Each LED is connected to a digital pin on the Arduino with a current-limiting resistor.
 
-![Simulação](circuit_images/image_simulador.png)
-![Circuito Real](circuit_images/Circuito_real.jpg)
+![Simulation](circuit_images/image_simulador.png)  
+![Physical Circuit](circuit_images/Circuito_real.jpg)
 
-## 💻 Funcionamento
+## 💻 How It Works
 
-- O Arduino lê o valor analógico do LDR.
-- Dependendo do valor lido, acende uma quantidade diferente de LEDs para indicar se o ambiente está claro, médio, escuro ou muito escuro.
-- Os valores de referência podem ser ajustados no código conforme a necessidade.
+- The Arduino reads the analog value from the LDR.
+- Depending on the reading, a different number of LEDs light up to indicate whether the environment is bright, medium, dark, or very dark.
+- Reference values can be adjusted in the code as needed.
 
-## 🚀 Como Usar
+## 🚀 How to Use
 
-1. Monte o circuito conforme o esquemático.
-2. Abra o arquivo `sketch_light_meter/sketch_light_meter.ino` na IDE do Arduino.
-3. Selecione a placa e porta corretas.
-4. Faça o upload do código para o Arduino.
-5. Observe os LEDs indicando o nível de luminosidade.
+1. Assemble the circuit according to the schematic.
+2. Open the file `sketch_light_meter/sketch_light_meter.ino` in the Arduino IDE.
+3. Select the correct board and port.
+4. Upload the code to the Arduino.
+5. Watch the LEDs indicate the ambient light level.
 
-## 📝 Código
+## 📝 Code
 
-O código está disponível na pasta [`sketch_light_meter`](./sketch_light_meter/sketch_light_meter.ino).
+The code is available in the [`sketch_light_meter`](./sketch_light_meter/sketch_light_meter.ino) folder.
 
-## 📄 Licença
+## 📄 License
 
-Este projeto está licenciado sob a licença MIT.
+This project is licensed under the MIT License.
 
 ---
 
-*Desenvolvido por Felipe Grolla
+*Developed by Felipe Grolla*
